@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookcrit book page
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+      <h3>'{{ bookinfo['title'] }}'</h3>
+      <h4>by {{ bookinfo['author']}}</h4>
+      <h5>published in {{ bookinfo['year'] }}</h5>
+      <p>(ISBN:{{ bookinfo['isbn'] }})</p>
+    </div>
+    <div class="col-md-4 text-right">
+      <a href="{{ url_for('review_write', book_id = bookinfo['book_id']) }}"><h2>Review this book</h2></a>
+    </div>
+  </div>
+<div class="row extra-space">
+  <div class="col-md-6">
+    Rated {{ avg_rating }} over 5 by {{ rating_counts }} users
+    on <a href="https://goodreads.com/book/show/{{ gr_id }}">Goodreads</a>
+
+  </div>
+
+</div>
+  <div class="row extra-space">
+    <div class="col-md-6">
+      <h4>Bookcrit users wrote:</h4>
+      {% if others_reviews %}
+        {% for review in others_reviews%}
+      <div class="review-block">
+        <blockquote cite="">
+          {{ review['text'] }}
+        </blockquote>
+        –– {{ review['rating'] }} out of 5 stars
+      </div>
+        {% endfor %}
+
+      {% else %}
+      <p>
+        No user has reviewed this book yet. Be the first one!
+      </p>
+
+      {% endif %}
+
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}

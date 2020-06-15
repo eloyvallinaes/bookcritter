@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookcrit home
+{% endblock %}
+
+{% block body %}
+    <h1>Welcome to Bookcrit</h1>
+    <p> Bookcrit is  ...</p>
+    <div class="row justify-content-around">
+      <div class="col">
+        <h2>Already a bookcritter? Log in!</h2>
+        <form  action="{{ url_for('login') }}" method="post">
+          <div class="form-group">
+            <label for="username">Username</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password</label><br>
+            <input type="password" id="password" name="password">
+            <input type="submit" name="" value="Log in!">
+          </div>
+        </form>
+        {{ relogin_message }}
+      </div>
+
+  <div class="col">
+    <h2>Want to become a bookcritter. Register here:</h2>
+      <form  action="{{ url_for('register') }}" method="post">
+        <div class="form-group">
+          <label for="new_username">Username</label><br>
+          <input type="text" name="new_username"><br>
+          <label for="new_password">Password</label><br>
+          <input type="password" name="new_password">
+          <input type="submit" name="" value="Register!">
+        </div>
+      </form>
+  </div>
+    </div>
+
+
+
+{% endblock %}

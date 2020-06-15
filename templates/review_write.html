@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookcrit edit review
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-md-6">
+      <h3>Reviewing '{{ book['title'] }}'</h3>
+      <h4>by {{ book['author'] }}</h4>
+
+      <form class="" action="{{ url_for('review_post', book_id = book["book_id"]) }}" method="post" id="book_review">
+            <label for="rating">Marks out of 5?</label>
+            <br>
+            <input type="number" name="rating" id="rating" value=0 max="5" min="0">
+            <br>
+            <label for="new_text">What did you think?</label>
+            <br>
+            <textarea style="min-width: 100%" name="text" rows="20" id="text" form="book_review" placeholder="Start typing"></textarea>
+            <br>
+            <label for="submit-botton">Post review</label>
+            <br>
+            <input type="submit" value="Post" name="submit-button" id="submit-button" class="btn btn-primary">
+      </form>
+    </div>
+    <div class="col-md-4">
+      <a href="{{url_for('find_book')}}"><h3>Search again</h3></a>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

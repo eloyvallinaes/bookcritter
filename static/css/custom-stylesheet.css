@@ -1,0 +1,85 @@
+body {
+  background-color: #75FFC7;
+}
+
+h2 {
+  text-align: center;
+}
+
+h4 {
+  color: darkgray;
+}
+
+.navbar, .footer {
+  background-color: #75FFC7;
+  default-color: black;
+  color: black;
+  padding: 5px;
+}
+
+.footer {
+  font-size: 12px;
+  margin: 15px;
+}
+
+.navbar :hover {
+  color: gray;
+}
+.navbar .active {
+  font-weight: bold;
+  color: black;
+  font-size-adjust: 1.1;
+}
+.navbar a {
+  color: black;
+}
+
+.card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-color: blue;
+  border-width: 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    visibility: hidden;
+  }
+
+  article {
+    width: 100%;
+  }
+}
+.book_title {
+  font-style: italic;
+}
+
+input {
+  font-size: 18pt;
+}
+
+.card label {
+  visibility: hidden;
+}
+.card .notification {
+  text-align: center;
+  background-color: red;
+  color: white;
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.extra-space {
+  margin-top: 50px;
+}
+
+.review-block {
+  margin-bottom: 30px;
+}
+
+/*# sourceMappingURL=custom-stylesheet.css.map */

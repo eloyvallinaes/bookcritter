@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookcrit edit review
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-md-6">
+            <h3>Pick a book</h3>
+            <br>
+            <ul>
+              {% for book in books %}
+              <li><a href="{{ url_for('book_page' , book_id = book[0]) }}">'{{ book[1] }}'</a> by {{ book[2] }}</li>
+              {% endfor %}
+            </ul>
+    </div>
+    <div class="col-md-4">
+      <a href="{{url_for('find_book')}}"><h3>Search again</h3></a>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+{% endblock %}

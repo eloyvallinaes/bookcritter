@@ -1,0 +1,88 @@
+$bgcolor : #75FFC7;
+$color : black;
+
+body {
+  background-color: $bgcolor;
+}
+h2 {
+  text-align: center;
+}
+h4 {
+  color : darkgray;
+}
+%section {
+  background-color : $bgcolor;
+  default-color : $color;
+  color : $color;
+  padding : 5px;
+}
+.footer {
+  @extend %section;
+  font-size : 12px;
+  margin : 15px;
+}
+.navbar {
+  @extend %section;
+  :hover {
+    color : gray;
+  }
+  .active {
+    font-weight: bold;
+    color : $color;
+    font-size-adjust: 1.1;
+  }
+  a {
+    color : $color;
+  }
+
+}
+
+.card {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-color: blue;
+  border-width: 1px;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    visibility: hidden;
+  }
+  article {
+    width: 100%
+  }
+}
+
+.book_title {
+  font-style: italic;
+}
+
+input {
+  font-size: 18pt;
+}
+.card {
+  label {
+    visibility: hidden;
+  }
+  .notification {
+    text-align: center;
+    background-color: red;
+    color : white;
+    margin-top: 20px;
+    margin-left : 20px;
+    margin-right: 20px;
+
+  }
+}
+
+blockquote {
+  font-style: italic;
+}
+
+.extra-space {
+  margin-top : 50px;
+}
+
+.review-block {
+  margin-bottom : 30px;
+}

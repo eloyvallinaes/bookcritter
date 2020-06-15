@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Bookcrit edit review
+{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row justify-content-around">
+    <div class="col-md-6">
+      <form class="" action="{{ url_for('review_update', review_id = review_id) }}" method="post" id="review_edit">
+        <h3>Editing your review of "{{ book_title }}"</h2>
+        <h4>by {{book_author}}</h3>
+        <br>
+        <label for="new_text">Write your new review</label>
+        <br>
+        <textarea name="new_text" id="new_text" rows = "25" cols = "50" form="review_edit">{{ review_text }}</textarea>
+        <label for="update_submit">Save changes</label>
+        <br>
+        <input type="submit" name="" value = "Update review" class="btn btn-primary" name="update-submit"></input>
+      </form>
+    </div>
+  </div>
+
+  </div>
+
+</div>
+{% endblock %}

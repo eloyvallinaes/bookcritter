@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <!-- My bespoke CSS -->
+    <link rel="stylesheet" href="/static/css/custom-stylesheet.css">
+
+    <title>{% block title %}{% endblock %}</title>
+
+    <body>
+        <nav class="navbar navbar-expand-lg">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
+            <a class="nav-item nav-link" href="{{ url_for('find_book') }}">Search</a>
+            {% if "user" not in session %}
+              <a class="nav-item nav-link" href="{{ url_for('register') }}">Sign up</a>
+            {% else %}
+              <a class="nav-item nav-link" href="{{ url_for('profile') }}">Profile</a>
+              <a class="nav-item nav-link" href="{{ url_for('logout') }}">Log out</a>
+            {% endif %}
+          </div>
+        </nav>
+
+    {% block body %}
+    {% endblock %}
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="/static/scripts/jquery-3.4.1.slim.min.js"></script>
+    <script src="/static/scripts/popper.min.js"></script>
+    <script src="/static/scripts/bootstrap.min.js"></script>
+    </body>
+</html>
