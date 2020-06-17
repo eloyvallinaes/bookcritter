@@ -51,12 +51,13 @@ def register():
 
         # Check the form is filled correctly
         if not username or not password:
-            return render_template("error.html", message = "Please type both username and password")
+            flash("Please fill in all fields")
+            return render_template("register.html")
 
         # Check email and username will be unique
         elif username in [i[0] for i in knowns] or email in [i[1] for i in knowns]:
             flash("Username or email already exists.")
-            return redirect(url_for("register"))
+            return render_template("register.html")
         else:
             # Add new user
             db.execute("INSERT INTO users (username, password, email) VALUES (:username, :password, :email);",

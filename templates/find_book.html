@@ -8,8 +8,6 @@
 <div class="container">
   <div class="row justify-content-around">
     <div class="col-md-4 text-center">
-      <div class="card">
-        <div class="card-body">
             {% with messages = get_flashed_messages() %}
             {% if messages %}
                 <div class="notification">
@@ -19,20 +17,18 @@
             {% endwith %}
 
           <form class="" action="{{ url_for('find_book') }}" method="post" id="find_book">
-            <div class="form_group">
-            <label for="book">Find a book</label><br>
-            <input class="" type="search" placeholder="Title, author or isbn" name="query" id="query"><br>
-              <div class="row text-center align-items-end" style="margin-top : 40px">
-                <div class="col">
-                  <input type="submit" name="" value="Find books!" class="btn btn-primary">
-                </div>
-              </div>
+            <div class="form-group">
+              <label for="book">Find a book</label>
+              <br>
+              <input class="" type="search" placeholder="Title, author or isbn" name="query" id="query">
+              <br>
+            </div>
+            <div class="form-group">
+              <input type="submit" name="" value="Find books!" class="btn btn-primary">
             </div>
 
           </form>
-        </div>
 
-      </div>
 
     </div>
   </div>

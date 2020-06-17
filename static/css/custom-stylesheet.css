@@ -34,22 +34,6 @@ h4 {
   color: black;
 }
 
-.card {
-  margin-top: 15px;
-  margin-bottom: 15px;
-  border-color: blue;
-  border-width: 1px;
-}
-
-@media screen and (max-width: 600px) {
-  .card {
-    visibility: hidden;
-  }
-
-  article {
-    width: 100%;
-  }
-}
 .book_title {
   font-style: italic;
 }
@@ -58,10 +42,7 @@ input {
   font-size: 18pt;
 }
 
-.card label {
-  visibility: hidden;
-}
-.card .notification {
+.notification {
   text-align: center;
   background-color: red;
   color: white;
